@@ -16,10 +16,34 @@
             font-family: "Poppins", sans-serif;
 
         }
+
+        @keyframes altShadow {
+            0%{
+                text-shadow: 0px 5px 10px deeppink, 0px -5px 10px cyan;
+            }
+            100%{
+                text-shadow: 0px 5px 10px cyan, 0px -5px 10px  deeppink;
+            }
+            
+        }
+
+        @keyframes borderAnim {
+            0%{
+                border-bottom: 5px  solid deeppink;
+                border-top: 5px  solid cyan;
+            }
+            100%{
+                
+                border-left: 5px  solid deeppink;
+                border-right: 5px  solid cyan;
+            }
+        }
+
         body{
             height: 100vh;
             width: 100vw;
             display: flex;
+            animation: fadeIn 1s ease-in-out ;
             align-items: center;
             justify-content: center;
             background: linear-gradient(45deg,rgb(230, 255, 255),rgb(255, 232, 244));
@@ -27,13 +51,14 @@
         .box{
             height: 80vh;
             width: 80vw;
+            animation: borderAnim 1s ease-in-out infinite alternate-reverse ;
             background-color: rgb(255, 255, 255);
             /* border: 3px dashed gray; */
             display: flex;
             max-width: 50vw;
             border-radius: 25px;
-            border-bottom: 5px  solid deeppink;
-            border-top: 5px  solid cyan;
+            /* border-bottom: 5px  solid deeppink;
+            border-top: 5px  solid cyan; */
         }
         .col{
             height: 100%;
@@ -58,6 +83,7 @@
         #name{
             text-shadow: 0px 5px 10px deeppink, 0px -5px 10px cyan;
             border-bottom: 3px dashed gray;
+            animation: altShadow 1s ease-in-out infinite alternate-reverse;
         }
         .column{
             flex-direction: column;
@@ -122,6 +148,15 @@
 }
         }
 
+@keyframes fadeIn {
+    0%{
+        opacity: 0%;
+    }
+
+    100%{
+        opacity: 100%;
+    }
+}
 
     </style>
 </head>
